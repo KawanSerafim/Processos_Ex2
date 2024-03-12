@@ -21,20 +21,30 @@ public class Main {
 			
 			switch (opc) {
 			case 1:
+				
 				kill.listaProcessos();
 				break;
+				
 			case 2:
 				
-				break;
-			case 3:
 				
 				break;
+			
+			case 3:
+				
+				
+				break;
+			
 			case 9:
+				
 				JOptionPane.showMessageDialog(null, "Saindo...");
 				break;
+			
 			default:
+				
 				JOptionPane.showMessageDialog(null, "Opção não identificada... Digite novamente.");
-		}
+		
+			}
 			
 		}
 	}
