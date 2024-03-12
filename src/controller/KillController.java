@@ -79,4 +79,10 @@ public class KillController {
 		
 	}
 	
+	public void mataPid() {
+		
+		
+		
+	}
+	
 }
