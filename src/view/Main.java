@@ -27,7 +27,8 @@ public class Main {
 				
 			case 2:
 				
-				
+				int pid = Integer.parseInt(JOptionPane.showInputDialog("Digite o PID do processo."));
+				kill.mataPid(pid);
 				
 				break;
 			

@@ -79,9 +79,43 @@ public class KillController {
 		
 	}
 	
-	public void mataPid() {
+	public void mataPid(int pid) {
 		
+		String nomeSO = os();
 		
+		if (nomeSO.contains("Windows")) {
+			
+			try {
+				
+				Process p = Runtime.getRuntime().exec("TASKKILL /PID " + pid);
+				InputStream fluxo = p.getInputStream();
+			
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+				
+			}
+			
+		}
+		else if (nomeSO.contains("Linux")) {
+			
+			try {
+				
+				Process p = Runtime.getRuntime().exec("kill -9 " + pid);
+				InputStream fluxo = p.getInputStream();
+			
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+			
+			}
+			
+		}
+		else {
+			
+			System.err.println("Não há versão para este sistema operacional...");
+			
+		}
 		
 	}
 	
