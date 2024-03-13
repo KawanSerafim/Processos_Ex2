@@ -119,4 +119,44 @@ public class KillController {
 		
 	}
 	
+	public void mataNome (String nomeProcesso) {
+		
+		String nomeSO = os();
+		
+		if (nomeSO.contains("Windows")) {
+			
+			try {
+				
+				Process p = Runtime.getRuntime().exec("TASKKILL /IM " + nomeProcesso);
+				InputStream fluxo = p.getInputStream();
+			
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+				
+			}
+			
+		}
+		else if (nomeSO.contains("Linux")) {
+			
+			try {
+				
+				Process p = Runtime.getRuntime().exec("pkill -f " + nomeProcesso);
+				InputStream fluxo = p.getInputStream();
+			
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+				
+			}
+			
+		}
+		else {
+			
+			System.err.println("Não há versão para este sistema operacional...");
+			
+		}
+		
+	}
+	
 }

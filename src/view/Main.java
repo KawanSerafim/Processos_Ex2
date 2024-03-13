@@ -34,6 +34,8 @@ public class Main {
 			
 			case 3:
 				
+				String nome = JOptionPane.showInputDialog("Digite o nome do processo.");
+				kill.mataNome(nome);
 				
 				break;
 			
